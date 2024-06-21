@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-7BLlwTb5JWv0sV+zM/pwD89T8ybZYL8wY4Q/PSyWWspTTMD4Xvta+WS+ZdzVzK0ZfuU+VLu1C/Ld0DSW0Z7mDg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> 
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> 
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+        }
+
+        .main-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            width: 90%;
+            max-width: 1400px;
+            height: 90%;
+        }
+
+        .left-column {
+            background: url('https://img.freepik.com/free-vector/copy-space-wavy-white-background-layers_23-2148845469.jpg?t=st=1718645390~exp=1718648990~hmac=6037a996f03a83110f2829826995aa9d366045cc24998cc4c3a1b73ae9114686&w=740');
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            text-align: center;
+        }
+
+        .left-column img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .left-column h3 {
+            font-weight: bold;
+            margin: 0;
+            color: black;
+        }
+
+        .right-column {
+            position: relative;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            overflow: hidden;
+        }
+
+        .right-column::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.myjoyonline.com/wp-content/uploads/2020/12/Commissioning-of-University-of-Mines-and-Technology-1-1024x683.jpeg') no-repeat center center/cover;
+            z-index: 1;
+            filter: blur(5px);
+        }
+
+        .login-container {
+            position: relative;
+            z-index: 2;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .login-container form {
+            width: 100%;
+        }
+
+        .login-container .btn-primary {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .login-container .form-control {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .login-container .footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .login-container .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .left-column,
+            .right-column {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .left-column {
+                order: 2;
+            }
+
+            .right-column {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-column">
+            <img src="https://conference.umat.edu.gh/wp-content/uploads/2018/01/UMaT-logo-238x300.jpg" alt="UMaT Logo">
+            <h3>Welcome to UMaT Counselling</h3>
+        </div>
+        <div class="right-column">
+            <div class="login-container">
+                <h2 style="margin-bottom: 0px; padding-bottom: 0px;">WELCOME BACK</h2>
+                <h4 style="font-size: 15px;">Enter your credentials to login</h4>
+                <form method="post" action="{% url 'do_login' %}">
+                    {% csrf_token %}
+                    <input type="email" class="form-control" name="email" placeholder="Email" id="email" required>
+                    <input type="password" class="form-control" name="password" placeholder="Password" id="password" required>
+                    <div class="d-flex justify-content-between">
+                        <a href="#" class="text-muted">Forget Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Sign In</button>
+                </form>
+                <div class="footer mt-3">
+                    <a href="#">Terms</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/393b9af61b.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Therapy Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!---- Custom CSS-->
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #fff;
+            padding: 1rem 3rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: #333;
+            margin-right: 1rem;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background-color: #fff;
+            
+        }
+
+        .header-text {
+            max-width: 50%;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div>
+            <img src="https://conference.umat.edu.gh/wp-content/uploads/2018/01/UMaT-logo-238x300.jpg" alt="UMaT Logo" style="height: 40px; width: auto;">
+            <a class="navbar-brand" href="{% url 'index' %}" target="_blank">UMaT COUNSELLING</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://umat.edu.gh/students/students-affairs/counselling-student-support-unit" target="_blank">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="header-text">
+            <h1 style="font-weight: bolder; font-size: 5rem; color: rgb(8, 8, 109);">UMaT Counselling</h1>
+            <p>
+                In the University environment such as ours, students benefit from a variety of programmes and services that go a long way to augment what goes on in the classroom and in producing a ‘wholly educated individuals’. An aspect of these student personnel services at the University is Guidance and Counselling.
+            </p>
+            <a href="https://umat.edu.gh/students/students-affairs/counselling-student-support-unit" target="_blank"" class="btn btn-primary">Read More</a>
+        </div>
+        <div>
+            <img src="https://img.freepik.com/free-vector/online-therapy-abstract-concept-illustration-online-counseling-mental-health-amid-coronavirus-quarantine-psychological-help-self-isolation-social-distancing_335657-1067.jpg?t=st=1718643767~exp=1718647367~hmac=5fdae96259ce039fb12b057454ef8862c05a2377304c51d3f12f79fecbd2d07f&w=740" alt="Online Counselling">
+        </div>
+    </header>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
